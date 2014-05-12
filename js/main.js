@@ -15,6 +15,15 @@ $(function ($) {
         };
     }
 
+    // reset
+    function reset() {
+        getShowImageFxn(0)();
+        setTimeout(getShowImageFxn(1), TIMEOUT_MS);
+    }
+
     // show second image eventually
-    setTimeout(getShowImageFxn(1), TIMEOUT_MS);
+    reset();
+
+    // click goes back to first image
+    $('body').on('click',reset);
   })
